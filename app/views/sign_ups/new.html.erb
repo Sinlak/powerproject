@@ -10,7 +10,11 @@
    <title>Power Project</title>
 </head>
 <body>
-<div id='logo'></div>
+  <div id='logo'>
+
+    <p id="slogan">Home of the power puff girls.</p>
+
+  </div>
 <div id='menu-wrapper'>
 <div id='cssmenu'>
 <ul>
@@ -21,6 +25,7 @@
 </ul>
 </div>
 </div>
+<div id="center-col">
 <div class="user-new">
   <h2>Create New User</h2>
 
@@ -50,6 +55,19 @@
     </div>
 
   <% end %>
+</div>
+</div>
+<div id="footer">
+  <%= link_to href: 'http://www.LinkedIn.com/' do %>
+  <%= image_tag("LinkedIn.png", :alt => "LinkedIN", :class => "media") %>
+  <% end %>
+  <%= link_to href: 'http://www.Facebook.com/' do %>
+  <%= image_tag("Facebook.png", :alt => "Facebook", :class => "media") %>
+  <% end %>
+  <%= link_to href: 'http://www.Twitter.com/' do %>
+  <%= image_tag("Twitter.png", :alt => "Twitter", :class => "media") %>
+  <% end %>
+
 </div>
 </body>
 </html>
