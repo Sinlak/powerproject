@@ -12,8 +12,10 @@ class SignUpsController < ApplicationController
     @user = SignUp.new(sign_ups_params)
 
     if @user.save
-      redirect_to(:action => 'new')
+      flash[:success] = "1"
+      redirect_to(:action => '../home')
     end
+
 
   end
 
