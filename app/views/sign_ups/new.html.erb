@@ -26,7 +26,8 @@
 </div>
 </div>
 <div id="center-col">
-<div class="user-new">
+<div class="col-md-10 col-md-offset-5">
+  <div style="padding-bottom:3px;">
   <h2>Create New User</h2>
 
   <%= form_for(:sign_ups, :url => {:action => 'create'}) do |f| %>
@@ -49,6 +50,7 @@
         <td><%= f.text_field(:password) %></td>
       </tr>
     </table>
+  </div>
 
     <div class="form-buttons">
       <input class="btn btn-primary" name="commit" type="submit" value="Create User" />
