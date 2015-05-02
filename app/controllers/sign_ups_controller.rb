@@ -13,7 +13,7 @@ class SignUpsController < ApplicationController
 
     if @user.save
 
-      flash[:notice] = "New user created successfully."
+      flash[:notice] = "Thank you " + @user.first_name + ", account created successfully."
       redirect_to(:action => '../home')
 
     end

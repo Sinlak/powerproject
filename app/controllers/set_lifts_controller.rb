@@ -1,0 +1,2 @@
+class SetLiftsController < ApplicationController
+end
