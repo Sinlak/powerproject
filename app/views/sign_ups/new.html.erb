@@ -27,10 +27,13 @@
       </ul>
     </div>
   </div>
+  <% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: "error alert-info" %>
+  <% end %>
   <div id="center-col">
     <div class="col-md-10 col-md-offset-5">
       <div style="padding-bottom:3px;">
-        <h2>Create New User</h2>
+        <h3>Create New User</h3>
 
         <%= form_for(:sign_ups, :url => {:action => 'create'}) do |f| %>
 
@@ -46,6 +49,7 @@
           <tr>
             <th>Email</th>
             <td><%= f.email_field(:email) %></td>
+
           </tr>
           <tr>
             <th>Password</th>
