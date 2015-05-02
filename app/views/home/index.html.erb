@@ -17,6 +17,8 @@
     <p id="slogan">Home of the power puff girls.</p>
 
   </div>
+
+
   <div id="menu-wrapper">
     <div id='cssmenu'>
       <ul>
@@ -27,7 +29,9 @@
       </ul>
     </div>
   </div>
-
+  <% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: "alert alert-info" %>
+  <% end %>
   <div id="center-col">
     <div class="row">
   <div class="col-md-2 col-md-push-10" >
