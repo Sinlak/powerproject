@@ -34,6 +34,6 @@ class SignUpsController < ApplicationController
 
   private
     def sign_ups_params
-      params.require(:sign_ups).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+      params.require(:sign_ups).permit(:first_name, :last_name, :email, :password, :password_confirmation, :subscription)
     end
 end

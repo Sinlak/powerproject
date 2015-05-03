@@ -6,11 +6,12 @@ class CreateSignUps < ActiveRecord::Migration
       t.string "last_name", :null=> false
       t.string "email", :null=> false
       t.string "password"
+      t.boolean "subscription", :default => false
 
 
       t.timestamps
     end
-  end  
+  end
   def down
     drop_table :sign_ups
   end
