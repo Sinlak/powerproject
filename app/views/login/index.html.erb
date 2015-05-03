@@ -1,0 +1,77 @@
+<% @page_title = "Login" %>
+<body>
+
+  <div id='logo'>
+
+    <p id="slogan">Home of the power puff girls.</p>
+
+  </div>
+
+
+  <div id="menu-wrapper">
+    <div id='cssmenu'>
+      <ul>
+        <li><a href='#'>Home</a></li>
+        <li><a href='../sign_ups'>Signup</a></li>
+        <li><a href='../set_lifts/'>SETLIFTS</a></li>
+        <li><a href='#'>VIEWPROGRAM</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="center-col">
+  <% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: "error alert-info" %>
+  <% end %>
+
+<div class="login">
+    <div class="col-md-5 col-md-offset-5" style="padding-top:20px;">
+      <div style="padding-bottom:3px;">
+
+<%= form_tag(:action => "attempt_login") do %>
+<h3>LogIn</h3>
+	<table>
+		<tr>
+		<td><%= label_tag(:email) %></td>
+		<td><%= text_field_tag(:email) %></td>
+		</tr>
+
+		<tr>
+		<td><%= label_tag(:password) %></td>
+		<td><%= text_field_tag(:password) %></td>
+		</tr>
+
+		<tr>
+			<td>&nbsp;</td>
+      <tr>
+			<td ><input class="btn btn-primary"  name="commit" type="submit" value="Log In"/>
+      <% end %> 
+      </td>  
+      </tr>
+      <tr>
+      <td>
+      <%= form_tag(:action => "logout") do %>
+      <input class="btn btn-primary" name="commit" type="submit" value="Log out"/></td>
+      </tr>
+      <% end %>
+		</tr>
+	</table>
+	
+  
+	</div>
+	</div>
+</div>
+</div>
+  <div id="footer">
+    <%= link_to href: 'http://www.LinkedIn.com/' do %>
+    <%= image_tag("LinkedIn.png", :alt => "LinkedIN", :class => "media") %>
+    <% end %>
+    <%= link_to href: 'http://www.Facebook.com/' do %>
+    <%= image_tag("Facebook.png", :alt => "Facebook", :class => "media") %>
+    <% end %>
+    <%= link_to href: 'http://www.Twitter.com/' do %>
+    <%= image_tag("Twitter.png", :alt => "Twitter", :class => "media") %>
+    <% end %>
+
+  </div>
+</body>

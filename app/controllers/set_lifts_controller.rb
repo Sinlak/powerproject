@@ -1,5 +1,5 @@
 class SetLiftsController < ApplicationController
-
+before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
   def index
   end
 
@@ -12,17 +12,24 @@ class SetLiftsController < ApplicationController
 
     if @lifts.save
 
-      flash[:notice] = "Thank you " + @user.first_name + ", lifts set successfully."
+      flash[:notice] = "Lifts set"
       redirect_to(:action => '../home')
 
+    
+    else
+      flash[:notice] = "didnt work"
+      redirect_to(:action => '../home')
     end
+
 
 
   end
 
   private
     def sign_ups_params
-      params.require(:set_lifts).permit(:Squat, :Bench, :Dead, :OHP)
+      params.require(:set_lifts).permit(:Squat, :Bench, :Dead, :OHP, :sign_up_id)
     end
+
+  
 
 end
