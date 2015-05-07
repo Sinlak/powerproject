@@ -26,4 +26,4 @@ Database user_name: pp_user
 
 To grant the proper privileges to pp_user (in mysql) :
 
-GRANT ALL PRIVILEGES ON powerproject_development.* TO 'pp_user'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON powerproject_production.* TO 'pp_user'@'localhost' IDENTIFIED BY 'password';

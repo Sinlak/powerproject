@@ -1,14 +1,14 @@
-<!doctype html>
-<html lang=''>
-<head>
-  <meta charset='utf-8'>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-</head>
-<title>Power Project</title>
 <body>
+  <%= form_tag(controller: "login", action: "logout") do %>
+  <table>
+    <tr>
+      <td>test</td>
+    <td><input class="btn" name="commit" type="submit" value="Log out"/></td>
+    </tr>
+
+  </table>
+  <% end %>
 
   <div id='logo'>
 
@@ -18,7 +18,6 @@
   <% else %>
   <%= label_tag "not logged in" %>
   <% end %>
-
   </div>
 
 
@@ -41,9 +40,6 @@
         <a class="twitter-timeline" href="https://twitter.com/MarkSmellyBell" data-widget-id="593650010450886657">Tweets by @MarkSmellyBell</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </div>
-
-
-
         <div class="bs-example">
           <div id="myCarousel" class="carousel slide" data-interval="6000" data-ride="carousel">
             <!-- Carousel indicators -->
@@ -85,10 +81,9 @@
             </a>
           </div>
         </div>
-
-
     </div>
   </div>
+
   <div id="footer">
     <%= link_to href: 'http://www.LinkedIn.com/' do %>
     <%= image_tag("LinkedIn.png", :alt => "LinkedIN", :class => "media") %>
@@ -101,6 +96,3 @@
     <% end %>
 
   </div>
-
-</body>
-<html>
