@@ -12,6 +12,9 @@ class SignUpsController < ApplicationController
     @user = SignUp.new(sign_ups_params)
 
     if @user.save!
+      if @user.subscription
+        UserMailer.welcome_email(@user).deliver
+      end
 
       flash[:notice] = "Thank you " + @user.first_name + ", account created successfully."
       redirect_to(:action => '../home')
