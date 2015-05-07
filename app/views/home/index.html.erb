@@ -13,6 +13,11 @@
   <div id='logo'>
 
     <p id="slogan">Home of the power puff girls.</p>
+  <% if session[:email] != nil %>
+  <%=  label_tag session[:email] %>
+  <% else %>
+  <%= label_tag "not logged in" %>
+  <% end %>
 
   </div>
 
