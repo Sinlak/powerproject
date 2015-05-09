@@ -5,10 +5,73 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag %>
 </head>
 <body>
 
-<%= yield %>
+  <div id='logo'>
+    <%= form_tag(controller: "login", action: "logout") do %>
+    <table style="float:right;">
+      <tr>
+        <td>
+          <% if session[:email] != nil %>
+          <input type="submit" value="logout" style="background:none; border-width:0px; color:blue; text-decoration:underline;" />
+          <% end %>
+          <% end %>
+        </td>
+        <td>
+          <% if session[:email] == nil %>
+          <a href= "../login" style="background:none; border-width:0px; color:blue; text-decoration:underline;">login</a>
+          <% end %>
+        </td>
+        <td>
+          <% if session[:email] != nil %>
+          <%=  label_tag session[:email] %>
+          <% end %>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <% @parse_url = request.original_url %>
+  <div id="menu-wrapper">
+    <div id='cssmenu'>
+      <ul>
+        <% if @parse_url.include? "home" %>
+        <li class='active' ><a href='../home/'>Home</a></li>
+        <% else %>
+        <li ><a href='../home/'>Home</a></li>
+        <% end %>
+        <% if @parse_url.include? "sign_ups" %>
+        <li class='active'><a href='../sign_ups/'>Signup</a></li>
+        <% else %>
+        <li ><a href='../sign_ups/'>Signup</a></li>
+        <% end %>
+        <% if @parse_url.include? "set_lifts" %>
+        <li class='active'><a href='../set_lifts/'>SETLIFTS</a></li>
+        <% else %>
+        <li><a href='../set_lifts/'>SETLIFTS</a></li>
+        <% end %>
+        <% if @parse_url.include? "view_program" %>
+        <li class='active'><a href='#'>VIEWPROGRAM</a></li>
+        <% else %>
+        <li><a href='#'>VIEWPROGRAM</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 
+  <%= yield %>
+  <div id="footer">
+    <%= link_to href: 'http://www.LinkedIn.com/' do %>
+    <%= image_tag("LinkedIn.png", :alt => "LinkedIN", :class => "media") %>
+    <% end %>
+    <%= link_to href: 'http://www.Facebook.com/' do %>
+    <%= image_tag("Facebook.png", :alt => "Facebook", :class => "media") %>
+    <% end %>
+    <%= link_to href: 'http://www.Twitter.com/' do %>
+    <%= image_tag("Twitter.png", :alt => "Twitter", :class => "media") %>
+    <% end %>
+
+  </div>
 </body>
 </html>

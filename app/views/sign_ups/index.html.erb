@@ -1,22 +1,6 @@
 
 <body>
-  <div id='logo'>
 
-    <p id="slogan">Home of the power puff girls.</p>
-
-  </div>
-
-
-  <div id='menu-wrapper'>
-    <div id='cssmenu'>
-      <ul>
-        <li ><a href='../home/index'>Home</a></li>
-        <li class='active'><a href=''>Signup</a></li>
-        <li><a href='../set_lifts/'>SETLIFTS</a></li>
-        <li><a href='#'>VIEWPROGRAM</a></li>
-      </ul>
-    </div>
-  </div>
   <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, class: "error alert-info" %>
   <% end %>
@@ -64,18 +48,6 @@
 
       <% end %>
     </div>
-  </div>
-  <div id="footer">
-    <%= link_to href: 'http://www.LinkedIn.com/' do %>
-    <%= image_tag("LinkedIn.png", :alt => "LinkedIN", :class => "media") %>
-    <% end %>
-    <%= link_to href: 'http://www.Facebook.com/' do %>
-    <%= image_tag("Facebook.png", :alt => "Facebook", :class => "media") %>
-    <% end %>
-    <%= link_to href: 'http://www.Twitter.com/' do %>
-    <%= image_tag("Twitter.png", :alt => "Twitter", :class => "media") %>
-    <% end %>
-
   </div>
 </body>
 </html>
