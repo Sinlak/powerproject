@@ -21,7 +21,7 @@
         </td>
         <td>
           <% if session[:email] == nil %>
-          <a href= "../login" style="background:none; border-width:0px; color:blue; text-decoration:underline;">login</a>
+          <%= link_to "Login", controller: "login" %>
           <% end %>
         </td>
         <td>
