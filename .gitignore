@@ -4,5 +4,6 @@ test/*
 log/*
 config/routes.rb
 config/database.yml
-
+Gemfile.lock
 schema.rb
+
