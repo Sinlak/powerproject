@@ -8,8 +8,11 @@ class SignUpsController < ApplicationController
     @user = SignUp.new
   end
 
+  def cost
+    return 10
+  end
   def create
-    cost = 10
+
     @user = SignUp.new(sign_ups_params)
 
     if @user.save!
