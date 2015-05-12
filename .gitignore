@@ -2,5 +2,7 @@ tmp/*
 test/*
 *.erb~
 log/*
+config/routes.rb
+config/database.yml
 
 schema.rb
