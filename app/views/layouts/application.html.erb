@@ -37,12 +37,12 @@
     <div id='cssmenu'>
       <ul>
         <% if @parse_url.include? "home" %>
-        <li class='active' ><a href='../powerproject/home/'>Home</a></li>
+        <li class='active' ><%= link_to "Home", controller: "Home" %> </li>
         <% else %>
         <li > <%= link_to "Home", controller: "Home" %>  </li>
         <% end %>
         <% if @parse_url.include? "sign_ups" %>
-        <li class='active'><a href='powerproject/sign_ups/'>Signup</a></li>
+        <li class='active'><%= link_to "SIGNUP", controller: "sign_ups" %> </li>
         <% else %>
         <li ><a href='/powerproject/sign_ups/'>Signup</a></li>
         <% end %>
