@@ -21,7 +21,7 @@ class SignUpsController < ApplicationController
       end
 
       flash[:notice] = "Thank you " + @user.first_name + ", account created successfully."
-      redirect_to(:action => '../home')
+      redirect_to(:controller => 'home')
 
     else
       flash[:error] = "something failed"
