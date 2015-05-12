@@ -6,6 +6,6 @@ class HomeController < ApplicationController
 		session[:user_id] = nil
 		session[:email] = nil
 		flash[:notice] = "Logged out"
-	  redirect_to(:action => '../home')
+	  redirect_to(:controller => 'home')
 	end
 end
