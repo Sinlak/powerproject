@@ -37,7 +37,6 @@
     <div id='cssmenu'>
       <ul>
         <% if @parse_url.include? "home" %>
-        <%= @parse_url %>
         <li class='active'><%= link_to "home", controller: "home" %> </li>
         <% else %>
         <li > <%= link_to "home", controller: "home" %>  </li>
@@ -72,7 +71,7 @@
     <%= link_to href: 'http://www.Twitter.com/' do %>
     <%= image_tag("Twitter.png", :alt => "Twitter", :class => "media") %>
     <% end %>
-
   </div>
+  <%= @parse_url %>
 </body>
 </html>
