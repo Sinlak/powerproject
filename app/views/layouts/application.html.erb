@@ -37,6 +37,7 @@
     <div id='cssmenu'>
       <ul>
         <% if @parse_url.include? "home" %>
+        <%= @parse_url %>
         <li class='active'><%= link_to "home", controller: "home" %> </li>
         <% else %>
         <li > <%= link_to "home", controller: "home" %>  </li>
