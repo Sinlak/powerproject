@@ -18,10 +18,10 @@ class LoginController < ApplicationController
 	  session[:user_id] = authorized_user.id
 	  session[:email] = authorized_user.email
 	  flash[:notice] = "You are now logged in."
-	  redirect_to(:action => '../home')
+	  redirect_to(:controller => "home")
 	else
 	  flash[:notice] = "Invalid username/password combination."
-	  redirect_to(:action => '../login')
+	  redirect_to(:controller => 'login')
 	end
 	end
 
@@ -29,12 +29,12 @@ class LoginController < ApplicationController
 		session[:user_id] = nil
 		session[:email] = nil
 		flash[:notice] = "Logged out"
-	    redirect_to(:action => '../home')
+		redirect_to(:controller => "home")
 	end
 
 
 
-	
+
 
 
 end
