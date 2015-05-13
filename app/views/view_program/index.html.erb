@@ -1,3 +1,11 @@
+<!--
+<% @test = SetLifts.all %>
+<% test = @test.find(session[:user_id]) %>
+<%= test.Squat %>
+-->
+<% @user = SetLifts.all %>
+<% user = @user.find(session[:user_id]) %>
+
 <div id="center-col">
 <div id="accordion">
   <section id="item1">
@@ -15,7 +23,7 @@
         <tbody>
           <tr>
             <td>Squat</td>
-            <td><%= session[:Squat] %></td>
+            <td><%= user.Squat %></td>
             <td>80%x5</td>
             <td>85%x5</td>
           </tr>
