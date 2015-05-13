@@ -299,7 +299,7 @@ h2{
 #accordion h1 {
   line-height:1.2;
   font-size:20px;
-  background-color:rgba(51,102,255,0.3);
+  background-color:rgba(255,255,0,0.3);
   margin:0;
   padding: 10px 10px 10px 30px;
 }
@@ -331,7 +331,7 @@ h2{
   position:absolute;
 }
 #accordion section:not(.ac_hidden) h1 {
-  background-color:rgba(51,102,255,0.7);
+  background-color:rgba(255,255,0,0.7);
 }
 
 #accordion section:not(.ac_hidden) .pointer {
