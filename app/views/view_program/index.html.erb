@@ -1,26 +1,19 @@
-<div class="accordion" id="accordion2">
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-        Collapsible Group Item #1
-      </a>
+<div id="myGroup">
+    <button class="btn dropdown" data-toggle="collapse" data-target="#keys" data-parent="#myGroup"><i class="icon-chevron-right"></i> Keys  <span class="badge badge-info pull-right">X</span></button>
+    <button class="btn dropdown" data-toggle="collapse" data-target="#attrs" data-parent="#myGroup"><i class="icon-chevron-right"></i> Attributes</button>
+    <button class="btn dropdown" data-toggle="collapse" data-target="#edit" data-parent="#myGroup"><i class="icon-chevron-right"></i> Edit Details</button>
+
+    <div class="accordion-group">
+        <div class="collapse indent" id="keys">
+            keys
+        </div>
+
+        <div class="collapse indent" id="attrs">
+            attrs
+        </div>
+
+        <div class="collapse" id="edit">
+            edit
+        </div>
     </div>
-    <div id="collapseOne" class="accordion-body collapse in">
-      <div class="accordion-inner">
-        Anim pariatur cliche...
-      </div>
-    </div>
-  </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-        Collapsible Group Item #2
-      </a>
-    </div>
-    <div id="collapseTwo" class="accordion-body collapse">
-      <div class="accordion-inner">
-        Anim pariatur cliche...
-      </div>
-    </div>
-  </div>
 </div>
