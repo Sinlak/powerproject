@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
-//= require chartkick
 
 $(document).ready(function() {
   $("#accordion section h1").click(function(e) {
