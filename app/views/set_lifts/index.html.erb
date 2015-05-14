@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang=''>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+<title>Power Project</title>
+<body>
+
+
+
+  <div id="center-col">
+
+    <div class="col-md-10 col-md-offset-5">
+      <div style="padding-bottom:3px;">
+        <h3>Set Lifts</h3>
+
+        <%= form_for(:set_lifts, :url => {:action => 'create'}, :method=> 'post') do |f| %>
+
+        <table summary="Subject form fields">
+          <tr>
+            <th>Squat</th>
+            <td><%= f.number_field(:Squat) %></td>
+          </tr>
+          <tr>
+            <th>Bench</th>
+            <td><%= f.number_field(:Bench) %></td>
+          </tr>
+          <tr>
+            <th>Dead</th>
+            <td><%= f.number_field(:Dead) %></td>
+          </tr>
+          <tr>
+            <th>OHP</th>
+            <td><%= f.number_field(:OHP) %></td>
+          </tr>
+          <tr>
+            <th>id</th>
+            <td><%= f.number_field(:sign_up_id, :value=>session[:user_id]) %></td>
+          </tr>
+        </table>
+        <%= submit_tag("Set lifts") %>
+      </div>
+      <% end %>
+    </div>
+
+  </div>
+
+
+</body>
+<html>
