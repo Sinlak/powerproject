@@ -5,7 +5,7 @@
 -->
 <% @user = SetLifts.all %>
 <% user = @user.find(session[:user_id]) %>
-<%= redirect_to :back %>
+<% redirect_to :back %>
 
 <div id="center-col">
 <div id="accordion">
