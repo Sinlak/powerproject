@@ -7,7 +7,10 @@ Powerproject::Application.configure do
   config.cache_classes = false
 
   # Do not eager load code on boot.
-  config.eager_load = false
+  config.eager_load = true
+
+  config.assets.compile = true
+  config.assets.precompile = ['*.js', '*.css', '*.css.erb', '*.html.erb']
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
