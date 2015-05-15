@@ -31,6 +31,10 @@
           <th>id</th>
           <td><%= f.number_field(:sign_up_id, :value=>session[:user_id]) %></td>
         </tr>
+        <tr>
+          <th>lifts_set</th>
+          <td><%= f.number_field(:lifts_set, :value=>1) %></td>
+        </tr>
       </table>
       <%= submit_tag("Set lifts") %>
     </div>

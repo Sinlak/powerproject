@@ -1,41 +1,37 @@
 <% @page_title = "Login" %>
-<body>
 
-
-  <div id="center-col">
+<div id="center-col">
   <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, class: "error alert-info" %>
   <% end %>
 
-<div class="login">
+  <div class="login">
     <div class="col-md-5 col-md-offset-5" style="padding-top:20px;">
       <div style="padding-bottom:3px;">
 
-<%= form_tag(:action => "attempt_login") do %>
-<h3>LogIn</h3>
-	<table>
-		<tr>
-		<td><%= label_tag(:email) %></td>
-		<td><%= text_field_tag(:email) %></td>
-		</tr>
+      <%= form_tag(:action => "attempt_login") do %>
+      <h3>LogIn</h3>
+      <table>
+        <tr>
+          <td><%= label_tag(:email) %></td>
+          <td><%= text_field_tag(:email) %></td>
+        </tr>
 
-		<tr>
-		<td><%= label_tag(:password) %></td>
-		<td><%= password_field_tag(:password) %></td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-      <tr>
-			<td ><input class="btn btn-primary"  name="commit" type="submit" value="Log In"/>
-      <% end %>
-      </td>
-      </tr>
-	</table>
+        <tr>
+          <td><%= label_tag(:password) %></td>
+          <td><%= password_field_tag(:password) %></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <tr>
+            <td ><input class="btn btn-primary"  name="commit" type="submit" value="Log In"/>
+              <% end %>
+            </td>
+          </tr>
+        </table>
 
 
-	</div>
-	</div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-
-</body>
