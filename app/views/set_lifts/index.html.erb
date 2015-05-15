@@ -29,7 +29,7 @@
         </tr>
         <tr>
           <th>id</th>
-          <td><%= f.number_field(:sign_up_id, :value=>session[:user_id], readonly => true) %></td>
+          <td><%= f.number_field(:sign_up_id, :value=>session[:user_id], :readonly => true) %></td>
         </tr>
       </table>
       <%= submit_tag("Set lifts") %>
