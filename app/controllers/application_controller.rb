@@ -14,4 +14,16 @@ class ApplicationController < ActionController::Base
       return true
     end
   end
+
+  def check_lifts
+    @user_test = SetLifts.all
+    unless !@user_test.where(id: session[:user_id]).nil?
+      flash[:notice] = "Set your lifts"
+      redirect_to(:controller => "set_lifts")
+      return false
+    else
+      return true
+  end
+end
+
 end

@@ -42,10 +42,12 @@
         <li > <%= link_to "home", controller: "home" %>  </li>
         <% end %>
 
+        <% if session[:email] == nil %>
         <% if @parse_url.include? "sign_ups" %>
         <li class='active'><%= link_to "SIGNUP", controller: "sign_ups" %> </li>
         <% else %>
         <li ><%= link_to "SIGNUP", controller: "sign_ups" %> </li>
+        <% end %>
         <% end %>
 
         <% if @parse_url.include? "set_lifts" %>
