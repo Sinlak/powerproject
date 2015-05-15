@@ -7,6 +7,7 @@
 <% user = @user.find(session[:user_id]) %>
 
 <div id="center-col">
+  <h3 style="margin-left:50%;">5/3/1</h3>
 <div id="accordion">
   <section id="item1">
     <p class="pointer">&#9654;</p><h1><a href="#">Week One</a></h1>
@@ -23,21 +24,21 @@
         <tbody>
           <tr>
             <td>Squat</td>
-            <td><%= (user.Squat*0.75).round %>lb x5 </td>            
-            <td>80%x5</td>
-            <td>85%x5</td>
+            <td><%= (0.9*user.Squat*0.75).round %>lbx5 </td>
+            <td><%= (0.9*user.Squat*0.80).round %>lbx5 </td>
+            <td><%= (0.9*user.Squat*0.85).round %>lbx5 </td>
           </tr>
           <tr>
             <td>Bench</td>
-            <td><%= user.Bench %></td>
-            <td>80%x5</td>
-            <td>85%x5</td>
+            <td><%= (0.9*user.Bench*0.75).round %>lbx5 </td>
+            <td><%= (0.9*user.Bench*0.80).round %>lbx5 </td>
+            <td><%= (0.9*user.Bench*0.85).round %>lbx5 </td>
           </tr>
           <tr>
             <td>Dead</td>
-            <td><%= user.Dead %></td>
-            <td>80%x5</td>
-            <td>85%x5</td>
+            <td><%= (0.9*user.Dead*0.75).round %>lbx5 </td>
+            <td><%= (0.9*user.Dead*0.80).round %>lbx5 </td>
+            <td><%= (0.9*user.Dead*0.85).round %>lbx5 </td>
           </tr>
         </tbody>
       </table>
@@ -56,21 +57,21 @@
           <tbody>
             <tr>
               <td>Squat</td>
-              <td>70%x3</td>
-              <td>80%x3</td>
-              <td>90%x3</td>
+              <td><%= (0.9*user.Squat*0.70).round %>lbx3 </td>
+              <td><%= (0.9*user.Squat*0.80).round %>lbx3 </td>
+              <td><%= (0.9*user.Squat*0.90).round %>lbx3 </td>
             </tr>
             <tr>
               <td>Bench</td>
-              <td>70%x3</td>
-              <td>80%x3</td>
-              <td>90%x3</td>
+              <td><%= (0.9*user.Bench*0.70).round %>lbx3 </td>
+              <td><%= (0.9*user.Bench*0.80).round %>lbx3 </td>
+              <td><%= (0.9*user.Bench*0.90).round %>lbx3 </td>
             </tr>
             <tr>
               <td>Dead</td>
-              <td>70%x3</td>
-              <td>80%x3</td>
-              <td>90%x3</td>
+              <td><%= (0.9*user.Dead*0.70).round %>lbx3 </td>
+              <td><%= (0.9*user.Dead*0.80).round %>lbx3 </td>
+              <td><%= (0.9*user.Dead*0.90).round %>lbx3 </td>
             </tr>
           </tbody>
         </table>
@@ -89,21 +90,21 @@
           <tbody>
             <tr>
               <td>Squat</td>
-              <td>75%x5</td>
-              <td>85%x3</td>
-              <td>95%x1</td>
+              <td><%= (0.9*user.Squat*0.75).round %>lbx5 </td>
+              <td><%= (0.9*user.Squat*0.85).round %>lbx3 </td>
+              <td><%= (0.9*user.Squat*0.95).round %>lbx1 </td>
             </tr>
             <tr>
               <td>Bench</td>
-              <td>75%x5</td>
-              <td>85%x3</td>
-              <td>95%x1</td>
+              <td><%= (0.9*user.Bench*0.75).round %>lbx5 </td>
+              <td><%= (0.9*user.Bench*0.85).round %>lbx3 </td>
+              <td><%= (0.9*user.Bench*0.95).round %>lbx1 </td>
             </tr>
             <tr>
               <td>Dead</td>
-              <td>75%x5</td>
-              <td>85%x3</td>
-              <td>95%x1</td>
+              <td><%= (0.9*user.Dead*0.75).round %>lbx5 </td>
+              <td><%= (0.9*user.Dead*0.85).round %>lbx3 </td>
+              <td><%= (0.9*user.Dead*0.95).round %>lbx1 </td>
             </tr>
           </tbody>
         </table>
@@ -122,21 +123,21 @@
           <tbody>
             <tr>
               <td>Squat</td>
-              <td>40%x5</td>
-              <td>50%x5</td>
-              <td>60%x5</td>
+              <td><%= (0.9*user.Squat*0.40).round %>lbx5 </td>
+              <td><%= (0.9*user.Squat*0.40).round %>lbx5 </td>
+              <td><%= (0.9*user.Squat*0.40).round %>lbx5 </td>
             </tr>
             <tr>
               <td>Bench</td>
-              <td>40%x5</td>
-              <td>50%x5</td>
-              <td>60%x5</td>
+              <td><%= (0.9*user.Bench*0.40).round %>lbx5 </td>
+              <td><%= (0.9*user.Bench*0.40).round %>lbx5 </td>
+              <td><%= (0.9*user.Bench*0.40).round %>lbx5 </td>
             </tr>
             <tr>
               <td>Dead</td>
-              <td>40%x5</td>
-              <td>50%x5</td>
-              <td>60%x5</td>
+              <td><%= (0.9*user.Dead*0.40).round %>lbx5 </td>
+              <td><%= (0.9*user.Dead*0.40).round %>lbx5 </td>
+              <td><%= (0.9*user.Dead*0.40).round %>lbx5 </td>
             </tr>
           </tbody>
         </table>
