@@ -73,6 +73,9 @@
   </div>
 
   <%= yield %>
+  <% lifter = @lifters.find(session[:user_id]) %>
+  <%= lifter.lifts_set %>
+
   <div id="footer">
     <%= link_to href: 'http://www.LinkedIn.com/' do %>
     <%= image_tag("LinkedIn.png", :alt => "LinkedIN", :class => "media") %>
@@ -84,5 +87,6 @@
     <%= image_tag("Twitter.png", :alt => "Twitter", :class => "media") %>
     <% end %>
   </div>
+  <p style="margin-right:50%">Copyright © 2015 POWERPROJECT®</p> 
 </body>
 </html>
