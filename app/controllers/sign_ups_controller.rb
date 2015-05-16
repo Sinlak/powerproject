@@ -1,7 +1,7 @@
 class SignUpsController < ApplicationController
 
 
-  def index
+  def index    
   end
 
   def new
@@ -15,7 +15,7 @@ class SignUpsController < ApplicationController
 
     @user = SignUp.new(sign_ups_params)
 
-    if @user.save!      
+    if @user.save!
       UserMailer.welcome_email(@user).deliver
 
       flash[:notice] = "Thank you " + @user.first_name + ", account created successfully."

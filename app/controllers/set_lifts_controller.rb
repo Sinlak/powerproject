@@ -15,7 +15,13 @@ before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
 
     if @lifts.save
 
+      @usr = SignUp.all
+      usr = @usr.find(session[:user_id])
+      usr.lifts_set = true
+      usr.save!
+
       flash[:notice] = "Lifts set"
+
       redirect_to(:controller => 'home')
 
 
