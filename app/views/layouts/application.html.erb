@@ -36,7 +36,7 @@
   <div id="menu-wrapper">
     <div id='cssmenu'>
       <ul>
-        <% if @parse_url == "http://cpsc458.chapman.edu/powerproject/" %>
+        <% if !@parse_url.include? "sign_ups" and !@parse_url.include? "set_lifts" and !@parse_url.include? "view_program" and !@parse_url.include? "profile" %>
         <li class='active'><%= link_to "home", controller: "home" %> </li>
         <% else %>
         <li > <%= link_to "home", controller: "home" %>  </li>
