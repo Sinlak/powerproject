@@ -2,7 +2,9 @@
 <% @user = SetLifts.all %>
 <% user = @user.where(:sign_up_id => session[:user_id]).last %>
 <div id="center-col">
-  <h3 style="margin-left:50%;">5/3/1</h3>
+
+
+<h3 style="margin-left:50%;"><%= user.program %></h3>
 <div class="bs-example">
     <div class="panel-group" id="accordion">
         <div class="panel panel-default">
