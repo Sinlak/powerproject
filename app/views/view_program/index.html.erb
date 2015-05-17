@@ -5,7 +5,8 @@
 
 
   <h3 style="text-align:center;"><%= user.program %></h3>
-  <!-- <div class="bs-example">
+  <% if user.program == "5/3/1" %>
+  <div class="bs-example">
     <div class="panel-group" id="accordion">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -171,10 +172,11 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
 
 
 
+    <% elsif user.program == "Smolov Jr Bench" %>
 
     <div class="bs-example">
       <div class="panel-group" id="accordion">
@@ -333,3 +335,4 @@
       </div>
     </div>
 </div>
+<%end%>
