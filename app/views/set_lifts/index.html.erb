@@ -28,6 +28,12 @@
           <td><%= f.number_field(:OHP) %></td>
         </tr>
         <tr>
+          <th>Program</th>
+          <td>
+            <%= f.select :program, [['Hot','hot'],['Medium','medium'],['Cold','cold']] %>
+          </td>
+        </tr>
+        <tr>
           <th>id</th>
           <td><%= f.number_field(:sign_up_id, :value=>session[:user_id], :readonly => true) %></td>
         </tr>

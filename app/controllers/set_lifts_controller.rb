@@ -36,9 +36,6 @@ before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
 
   private
     def sign_ups_params
-      params.require(:set_lifts).permit(:Squat, :Bench, :Dead, :OHP, :sign_up_id)
+      params.require(:set_lifts).permit(:Squat, :Bench, :Dead, :OHP, :sign_up_id, :program)
     end
-
-
-
 end
