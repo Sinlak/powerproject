@@ -191,30 +191,18 @@
               <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th>Lift</th>
-                    <th>First Set</th>
-                    <th>Second Set</th>
-                    <th>Third Set</th>
+                    <th>Day 1 - 6 x 6</th>
+                    <th>Day 2 - 7 x 5</th>
+                    <th>Day 3 - 8 x 4</th>
+                    <th>Day 4 - 10 x 3</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Squat</td>
-                    <td><%= (0.9*user.Squat*0.75).round %>lbx5 </td>
-                    <td><%= (0.9*user.Squat*0.80).round %>lbx5 </td>
-                    <td><%= (0.9*user.Squat*0.85).round %>lbx5 </td>
-                  </tr>
-                  <tr>
-                    <td>Bench</td>
-                    <td><%= (0.9*user.Bench*0.75).round %>lbx5 </td>
-                    <td><%= (0.9*user.Bench*0.80).round %>lbx5 </td>
-                    <td><%= (0.9*user.Bench*0.85).round %>lbx5 </td>
-                  </tr>
-                  <tr>
-                    <td>Dead</td>
-                    <td><%= (0.9*user.Dead*0.75).round %>lbx5 </td>
-                    <td><%= (0.9*user.Dead*0.80).round %>lbx5 </td>
-                    <td><%= (0.9*user.Dead*0.85).round %>lbx5 </td>
+                    <td><%= (user.Bench*0.70).round %>lb 6x6 </td>
+                    <td><%= (user.Bench*0.75).round %>lb 7x5</td>
+                    <td><%= (user.Bench*0.80).round %>lb 8x4</td>
+                    <td><%= (user.Bench*0.85).round %>lb 10x3</td>
                   </tr>
                 </tbody>
               </table>
@@ -232,30 +220,18 @@
               <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th>Lift</th>
-                    <th>First Set</th>
-                    <th>Second Set</th>
-                    <th>Third Set</th>
+                    <th>Day 1 - 6 x 6</th>
+                    <th>Day 2 - 7 x 5</th>
+                    <th>Day 3 - 8 x 4</th>
+                    <th>Day 4 - 10 x 3</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Squat</td>
-                    <td><%= (0.9*user.Squat*0.70).round %>lbx3 </td>
-                    <td><%= (0.9*user.Squat*0.80).round %>lbx3 </td>
-                    <td><%= (0.9*user.Squat*0.90).round %>lbx3 </td>
-                  </tr>
-                  <tr>
-                    <td>Bench</td>
-                    <td><%= (0.9*user.Bench*0.70).round %>lbx3 </td>
-                    <td><%= (0.9*user.Bench*0.80).round %>lbx3 </td>
-                    <td><%= (0.9*user.Bench*0.90).round %>lbx3 </td>
-                  </tr>
-                  <tr>
-                    <td>Dead</td>
-                    <td><%= (0.9*user.Dead*0.70).round %>lbx3 </td>
-                    <td><%= (0.9*user.Dead*0.80).round %>lbx3 </td>
-                    <td><%= (0.9*user.Dead*0.90).round %>lbx3 </td>
+                    <td><%= (5+user.Bench*0.70).round %>lb 6x6 </td>
+                    <td><%= (5+user.Bench*0.75).round %>lb 7x5</td>
+                    <td><%= (5+user.Bench*0.80).round %>lb 8x4</td>
+                    <td><%= (5+user.Bench*0.85).round %>lb 10x3</td>
                   </tr>
                 </tbody>
               </table>
@@ -273,47 +249,6 @@
               <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th>Lift</th>
-                    <th>First Set</th>
-                    <th>Second Set</th>
-                    <th>Third Set</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Squat</td>
-                    <td><%= (0.9*user.Squat*0.75).round %>lbx5 </td>
-                    <td><%= (0.9*user.Squat*0.85).round %>lbx3 </td>
-                    <td><%= (0.9*user.Squat*0.95).round %>lbx1 </td>
-                  </tr>
-                  <tr>
-                    <td>Bench</td>
-                    <td><%= (0.9*user.Bench*0.75).round %>lbx5 </td>
-                    <td><%= (0.9*user.Bench*0.85).round %>lbx3 </td>
-                    <td><%= (0.9*user.Bench*0.95).round %>lbx1 </td>
-                  </tr>
-                  <tr>
-                    <td>Dead</td>
-                    <td><%= (0.9*user.Dead*0.75).round %>lbx5 </td>
-                    <td><%= (0.9*user.Dead*0.85).round %>lbx3 </td>
-                    <td><%= (0.9*user.Dead*0.95).round %>lbx1 </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Week Four(deload)</a>
-            </h4>
-          </div>
-          <div id="collapseFour" class="panel-collapse collapse">
-            <div class="panel-body">
-              <table class="table table-hover">
-                <thead>
-                  <tr>
                     <th>Day 1 - 6 x 6</th>
                     <th>Day 2 - 7 x 5</th>
                     <th>Day 3 - 8 x 4</th>
@@ -322,10 +257,10 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>6x6</td>
-                    <td> 7x5 </td>
-                    <td> 8x4 </td>
-                    <td> 10x3 </td>
+                    <td><%= (10+user.Bench*0.70).round %>lb 6x6 </td>
+                    <td><%= (10+user.Bench*0.75).round %>lb 7x5</td>
+                    <td><%= (10+user.Bench*0.80).round %>lb 8x4</td>
+                    <td><%= (10+user.Bench*0.85).round %>lb 10x3</td>
                   </tr>
                 </tbody>
               </table>
