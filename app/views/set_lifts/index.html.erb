@@ -38,15 +38,19 @@
           <td><%= f.number_field(:sign_up_id, :value=>session[:user_id], :readonly => true) %></td>
         </tr>
       </table>
+      <br>
       <%= submit_tag("Set lifts") %>
     </div>
     <% end %>
 
-    <h1>Calculate 1RM</h1>
+    <h6>Calculate 1RM</h6>
+    Weight
     <input id="a1" type="text" value="10" /><br>
+    Reps
     <input id="a2" type="text" value="20" /><br>
+    1RM
     <input id="a3" type="text" value="" /><br>
-    <button onclick="document.getElementById('a3').value = document.getElementById('a1').value * document.getElementById('a2').value">Click me</button>
+    <button onclick="document.getElementById('a3').value = document.getElementById('a1').value * document.getElementById('a2').value *.0333 + document.getElementById('a1').value">Click me</button>
 
   </div>
 
