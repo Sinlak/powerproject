@@ -1,3 +1,43 @@
+<% @user = SignUp.all %>
+<% user = @user.find_by_id(session[:user_id]) %>
+
 <div id="center-col">
-  
+  <div class = "col-md-6 col-md-offset-3 content-title" id = "settings">
+    <h1>Personal Info</h1>
+  </div>
+  <div class = "col-md-6 col-md-offset-3 profileinfo" id = "settings">
+    <ul>
+      <li id = "list-item">
+        <div id = "txt">
+          <%= user.first_name + " " + user.last_name %>
+        </div>
+        <div id = "label">
+          Full Name
+        </div>
+      </li>
+      <li id = "list-item">
+        <div id = "txt">
+          <%= session[:email] %>
+        </div>
+        <div id = "label">
+          Email
+        </div>
+      </li>
+      <li id = "list-item">
+        <div class = "checkbox" id = "txt">
+          <label>
+            <input type = "checkbox" value = "">
+            Subscribe to newsletter
+          </label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class = "col-md-6 col-md-offset-3 content-title" id = "settings">
+    <h1>Program Info</h1>
+  </div>
+  <div class = "col-md-6 col-md-offset-3 programinfo" id = "settings">
+
+  </div>
 </div>

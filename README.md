@@ -36,7 +36,7 @@ Profile pag:
   -current program - can edit
     - 5/3/1
     - starting strength (SS)
-    - cube method (CUBEMethod)
+    - Smolov Jr (SJ)
   -sign up - first lift
   -current lift
   -line graph: show progress
