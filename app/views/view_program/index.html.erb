@@ -1,6 +1,8 @@
 
 <% @user = SetLifts.all %>
 <% user = @user.where(:sign_up_id => session[:user_id]).last %>
+<%= select @x, [['5/3/1','5/3/1'],['Smolov Jr Bench','Smolov Jr Bench'],['Smolov Jr Dead','Smolov Jr Dead'],['Smolov Jr Squat','Smolov Jr Squat'],['Starting Stength','Starting Strength']] %>
+<%= @x %>
 <div id="center-col">
 
   <h3 style="text-align:center;"><%= user.program %></h3>
