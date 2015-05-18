@@ -6,7 +6,7 @@
 
   <div class="col-md-10 col-md-offset-5">
     <div style="padding-bottom:3px;">
-      <h3>Set Lifts</h3>
+      <h3>Set Lifts 1RM</h3>
 
       <%= form_for(:set_lifts, :url => {:action => 'create'}, :method=> 'post') do |f| %>
 
@@ -41,6 +41,23 @@
       <%= submit_tag("Set lifts") %>
     </div>
     <% end %>
+    <form action="#">
+    <h1>Calculate 1RM</h1>
+    <input id="a1" type="text" value="10" />
+    <input id="a2" type="text" value="20" />
+    <input id="a3" type="text" value="" />
+    <input type="submit" value="Submit">
+  </form>
   </div>
 
 </div>
+<script>
+$(document).ready(function(){
+    $('#a1').keyup(calculate);
+    $('#a2').keyup(calculate);
+});
+function calculate(e)
+{
+    $('#a3').val($('#a1').val() * $('#a2').val());
+}
+</script>

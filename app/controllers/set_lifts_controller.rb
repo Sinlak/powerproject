@@ -10,6 +10,10 @@ before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
     @lifts = SetLifts.new
   end
 
+  def calc
+    @rm = 0
+  end
+
   def create
     @lifts = SetLifts.new(sign_ups_params)
 
