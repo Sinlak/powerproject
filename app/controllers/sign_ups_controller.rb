@@ -25,9 +25,9 @@ class SignUpsController < ApplicationController
       flash[:error] = "something failed"
       redirect_to :back
     end
-  # rescue
-  #   flash[:error] = "Failed to create user, email is taken or passwords do not match"
-  #   redirect_to :back
+  rescue
+    flash[:error] = "Failed to create user, email is taken or passwords do not match"
+    redirect_to :back
    end
 
   private
