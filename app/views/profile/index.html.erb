@@ -33,7 +33,12 @@
       </li>
     </ul>
   </div>
+  <form action="">
+  <% user.subscribed = false %>
+  <% user.save! %>
+  <button class="btn-primary" type="submit">test</button>
 
+</form>
   <div class = "col-md-6 col-md-offset-3 content-title" id = "settings">
     <h1>Program Info</h1>
   </div>
