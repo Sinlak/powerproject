@@ -3,6 +3,11 @@
 <% user = @user.where(:sign_up_id => session[:user_id]).last %>
 <div id="center-col">
 
+  <form action="">
+  <input type="radio" name="program" value="Starting Strength">Starting Strength
+  <% user.program = "Starting Strength" %>
+  <% user.save! %>
+  </form>
   <h3 style="text-align:center;"><%= user.program %></h3>
 
   <div class="bs-example">
