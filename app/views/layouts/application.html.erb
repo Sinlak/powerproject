@@ -36,30 +36,41 @@
   <div id="menu-wrapper">
     <div id='cssmenu'>
       <ul>
-        <% if @parse_url == "http://cpsc458.chapman.edu/powerproject/" %>
+        <% if !@parse_url.include? "sign_ups" and !@parse_url.include? "set_lifts" and !@parse_url.include? "view_program" and !@parse_url.include? "profile" %>
         <li class='active'><%= link_to "home", controller: "home" %> </li>
         <% else %>
         <li > <%= link_to "home", controller: "home" %>  </li>
         <% end %>
+
+        <% if session[:email] == nil %>
         <% if @parse_url.include? "sign_ups" %>
         <li class='active'><%= link_to "SIGNUP", controller: "sign_ups" %> </li>
         <% else %>
         <li ><%= link_to "SIGNUP", controller: "sign_ups" %> </li>
         <% end %>
+        <% end %>
+
         <% if @parse_url.include? "set_lifts" %>
         <li class='active'><%= link_to "SETLIFTS", controller: "set_lifts" %> </li>
         <% else %>
         <li><%= link_to "SETLIFTS", controller: "set_lifts" %> </li>
         <% end %>
+
         <% if @parse_url.include? "view_program" %>
         <li class='active'><%= link_to "VIEWPROGRAM", controller: "view_program" %> </li>
         <% else %>
         <li><%= link_to "VIEWPROGRAM", controller: "view_program" %> </li>
         <% end %>
+
+
+        <% if @parse_url.include? "profile" %>
+        <li class='active'><%= link_to "PROFILE", controller: "profile" %> </li>
+        <% else %>
+        <li><%= link_to "PROFILE", controller: "profile" %> </li>
+        <% end %>
       </ul>
     </div>
   </div>
-
   <%= yield %>
   <div id="footer">
     <%= link_to href: 'http://www.LinkedIn.com/' do %>

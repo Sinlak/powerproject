@@ -14,4 +14,16 @@ class ApplicationController < ActionController::Base
       return true
     end
   end
+
+  def confirm_lifts
+    @lifter = SignUp.all
+    lifter = @lifter.find(session[:user_id])
+    if lifter.lifts_set == false
+      flash[:notice] = "Please set lifts in order to view program"
+      redirect_to(:controller => "set_lifts")
+      return false
+    else
+      return true
+    end
+  end
 end

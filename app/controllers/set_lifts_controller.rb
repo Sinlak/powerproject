@@ -10,12 +10,22 @@ before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
     @lifts = SetLifts.new
   end
 
+  def calc
+    @rm = 0
+  end
+
   def create
     @lifts = SetLifts.new(sign_ups_params)
 
     if @lifts.save
 
+      @usr = SignUp.all
+      usr = @usr.find(session[:user_id])
+      usr.lifts_set = true
+      usr.save!
+
       flash[:notice] = "Lifts set"
+
       redirect_to(:controller => 'home')
 
 
@@ -30,9 +40,6 @@ before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
 
   private
     def sign_ups_params
-      params.require(:set_lifts).permit(:Squat, :Bench, :Dead, :OHP, :sign_up_id)
+      params.require(:set_lifts).permit(:Squat, :Bench, :Dead, :OHP, :sign_up_id, :program)
     end
-
-
-
 end

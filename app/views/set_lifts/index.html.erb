@@ -1,54 +1,65 @@
-<!doctype html>
-<html lang=''>
-<head>
-  <meta charset='utf-8'>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<% flash.each do |name, msg| %>
+<%= content_tag :div, msg, class: "alert alert-info" %>
+<% end %>
+<div id="center-col">
 
-</head>
-<title>Power Project</title>
-<body>
+  <div class="col-md-10 col-md-offset-5">
+    <div style="padding-bottom:3px;">
+      <h3>Set Lifts 1RM</h3>
 
+      <%= form_for(:set_lifts, :url => {:action => 'create'}, :method=> 'post') do |f| %>
 
-
-  <div id="center-col">
-
-    <div class="col-md-10 col-md-offset-5">
-      <div style="padding-bottom:3px;">
-        <h3>Set Lifts</h3>
-
-        <%= form_for(:set_lifts, :url => {:action => 'create'}, :method=> 'post') do |f| %>
-
-        <table summary="Subject form fields">
-          <tr>
-            <th>Squat</th>
-            <td><%= f.number_field(:Squat) %></td>
-          </tr>
-          <tr>
-            <th>Bench</th>
-            <td><%= f.number_field(:Bench) %></td>
-          </tr>
-          <tr>
-            <th>Dead</th>
-            <td><%= f.number_field(:Dead) %></td>
-          </tr>
-          <tr>
-            <th>OHP</th>
-            <td><%= f.number_field(:OHP) %></td>
-          </tr>
-          <tr>
-            <th>id</th>
-            <td><%= f.number_field(:sign_up_id, :value=>session[:user_id]) %></td>
-          </tr>
-        </table>
-        <%= submit_tag("Set lifts") %>
-      </div>
-      <% end %>
+      <table summary="Subject form fields">
+        <tr>
+          <th>Squat</th>
+          <td><%= f.number_field(:Squat) %></td>
+        </tr>
+        <tr>
+          <th>Bench</th>
+          <td><%= f.number_field(:Bench) %></td>
+        </tr>
+        <tr>
+          <th>Dead</th>
+          <td><%= f.number_field(:Dead) %></td>
+        </tr>
+        <tr>
+          <th>OHP</th>
+          <td><%= f.number_field(:OHP) %></td>
+        </tr>
+        <tr>
+          <th>Program</th>
+          <td>
+            <%= f.select :program, [['5/3/1','5/3/1'],['Smolov Jr Bench','Smolov Jr Bench'],['Smolov Jr Dead','Smolov Jr Dead'],['Smolov Jr Squat','Smolov Jr Squat'],['Starting Stength','Starting Strength']] %>
+          </td>
+        </tr>
+        <tr>
+          <th>id</th>
+          <td><%= f.number_field(:sign_up_id, :value=>session[:user_id], :readonly => true) %></td>
+        </tr>
+      </table>
+      <br>
+      <%= submit_tag("Set Lifts") %>
     </div>
+    <% end %>
+    <br>
+    <table>
+      <h5>Calculate 1RM</h5>
+      <tr>
+        <th>Weight</th>
+        <td><input id="a1" type="text" value="" /></td>
+      </tr>
+      <tr>
+        <th>Reps</th>
+        <td><input id="a2" type="text" value="" /></td>
+      </tr>
+      <tr>
+        <th>1RM</th>
+        <td><input id="a3" type="text" value="" /></td>
+      </tr>
+    </table>
+    <button class="btn-primary" onclick="document.getElementById('a3').value = (parseFloat(document.getElementById('a1').value) * (parseFloat(document.getElementById('a2').value * 0.03))   + parseFloat(document.getElementById('a1').value))">Calculate 1RM</button>
 
   </div>
 
-
-</body>
-<html>
+</div>

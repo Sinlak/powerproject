@@ -15,6 +15,7 @@ development:
   pool: 5
   username: pp_user
   password: password
+  #socket: /var/run/mysqld/mysqld.sock
   socket: /var/lib/mysql/mysql.sock
 
 
@@ -37,4 +38,4 @@ production:
   pool: 5
   username: pp_user
   password: password
-  socket: 
+  socket:

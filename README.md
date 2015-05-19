@@ -27,3 +27,18 @@ Database user_name: pp_user
 To grant the proper privileges to pp_user (in mysql) :
 
 GRANT ALL PRIVILEGES ON powerproject_production.* TO 'pp_user'@'localhost' IDENTIFIED BY 'password';
+
+
+Profile pag:
+  -username/email
+  -change password
+  -change subscription
+  -current program - can edit
+    - 5/3/1
+    - starting strength (SS)
+    - Smolov Jr (SJ)
+  -sign up - first lift
+  -current lift
+  -line graph: show progress
+  javascript in: app/assets/javascripts
+  css in:home.css.sass

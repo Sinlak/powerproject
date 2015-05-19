@@ -1,145 +1,535 @@
-<!--
-<% @test = SetLifts.all %>
-<% test = @test.find(session[:user_id]) %>
-<%= test.Squat %>
--->
+
 <% @user = SetLifts.all %>
-<% user = @user.find(session[:user_id]) %>
-
+<% user = @user.where(:sign_up_id => session[:user_id]).last %>
 <div id="center-col">
-<div id="accordion">
-  <section id="item1">
-    <p class="pointer">&#9654;</p><h1><a href="#">Week One</a></h1>
 
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>Lift</th>
-            <th>First Set</th>
-            <th>Second Set</th>
-            <th>Third Set</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Squat</td>
-            <td><%= (user.Squat*0.75).round %>lb x5 </td>            
-            <td>80%x5</td>
-            <td>85%x5</td>
-          </tr>
-          <tr>
-            <td>Bench</td>
-            <td><%= user.Bench %></td>
-            <td>80%x5</td>
-            <td>85%x5</td>
-          </tr>
-          <tr>
-            <td>Dead</td>
-            <td><%= user.Dead %></td>
-            <td>80%x5</td>
-            <td>85%x5</td>
-          </tr>
-        </tbody>
-      </table>
-      </section>
-      <section id="item2" class="ac_hidden">
-        <p class="pointer">&#9654;</p><h1><a href="#">Week Two</a></h1>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>Lift</th>
-              <th>First Set</th>
-              <th>Second Set</th>
-              <th>Third Set</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Squat</td>
-              <td>70%x3</td>
-              <td>80%x3</td>
-              <td>90%x3</td>
-            </tr>
-            <tr>
-              <td>Bench</td>
-              <td>70%x3</td>
-              <td>80%x3</td>
-              <td>90%x3</td>
-            </tr>
-            <tr>
-              <td>Dead</td>
-              <td>70%x3</td>
-              <td>80%x3</td>
-              <td>90%x3</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <section id="item3" class="ac_hidden">
-        <p class="pointer">&#9654;</p><h1><a href="#">Week Three</a></h1>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>Lift</th>
-              <th>First Set</th>
-              <th>Second Set</th>
-              <th>Third Set</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Squat</td>
-              <td>75%x5</td>
-              <td>85%x3</td>
-              <td>95%x1</td>
-            </tr>
-            <tr>
-              <td>Bench</td>
-              <td>75%x5</td>
-              <td>85%x3</td>
-              <td>95%x1</td>
-            </tr>
-            <tr>
-              <td>Dead</td>
-              <td>75%x5</td>
-              <td>85%x3</td>
-              <td>95%x1</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <section id="item3" class="ac_hidden">
-        <p class="pointer">&#9654;</p><h1><a href="#">Week Four(deload)</a></h1>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>Lift</th>
-              <th>First Set</th>
-              <th>Second Set</th>
-              <th>Third Set</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Squat</td>
-              <td>40%x5</td>
-              <td>50%x5</td>
-              <td>60%x5</td>
-            </tr>
-            <tr>
-              <td>Bench</td>
-              <td>40%x5</td>
-              <td>50%x5</td>
-              <td>60%x5</td>
-            </tr>
-            <tr>
-              <td>Dead</td>
-              <td>40%x5</td>
-              <td>50%x5</td>
-              <td>60%x5</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+  <h3 style="text-align:center;"><%= user.program %></h3>
+
+  <div class="bs-example">
+    <% if user.program == "5/3/1" %>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Week One</a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Lift</th>
+                  <th>First Set</th>
+                  <th>Second Set</th>
+                  <th>Third Set</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Squat</td>
+                  <td><%= (0.9*user.Squat*0.75).round %>lbx5 </td>
+                  <td><%= (0.9*user.Squat*0.80).round %>lbx5 </td>
+                  <td><%= (0.9*user.Squat*0.85).round %>lbx5 </td>
+                </tr>
+                <tr>
+                  <td>Bench</td>
+                  <td><%= (0.9*user.Bench*0.75).round %>lbx5 </td>
+                  <td><%= (0.9*user.Bench*0.80).round %>lbx5 </td>
+                  <td><%= (0.9*user.Bench*0.85).round %>lbx5 </td>
+                </tr>
+                <tr>
+                  <td>Dead</td>
+                  <td><%= (0.9*user.Dead*0.75).round %>lbx5 </td>
+                  <td><%= (0.9*user.Dead*0.80).round %>lbx5 </td>
+                  <td><%= (0.9*user.Dead*0.85).round %>lbx5 </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Week Two</a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Lift</th>
+                  <th>First Set</th>
+                  <th>Second Set</th>
+                  <th>Third Set</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Squat</td>
+                  <td><%= (0.9*user.Squat*0.70).round %>lbx3 </td>
+                  <td><%= (0.9*user.Squat*0.80).round %>lbx3 </td>
+                  <td><%= (0.9*user.Squat*0.90).round %>lbx3 </td>
+                </tr>
+                <tr>
+                  <td>Bench</td>
+                  <td><%= (0.9*user.Bench*0.70).round %>lbx3 </td>
+                  <td><%= (0.9*user.Bench*0.80).round %>lbx3 </td>
+                  <td><%= (0.9*user.Bench*0.90).round %>lbx3 </td>
+                </tr>
+                <tr>
+                  <td>Dead</td>
+                  <td><%= (0.9*user.Dead*0.70).round %>lbx3 </td>
+                  <td><%= (0.9*user.Dead*0.80).round %>lbx3 </td>
+                  <td><%= (0.9*user.Dead*0.90).round %>lbx3 </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Week Three</a>
+          </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse">
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Lift</th>
+                  <th>First Set</th>
+                  <th>Second Set</th>
+                  <th>Third Set</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Squat</td>
+                  <td><%= (0.9*user.Squat*0.75).round %>lbx5 </td>
+                  <td><%= (0.9*user.Squat*0.85).round %>lbx3 </td>
+                  <td><%= (0.9*user.Squat*0.95).round %>lbx1 </td>
+                </tr>
+                <tr>
+                  <td>Bench</td>
+                  <td><%= (0.9*user.Bench*0.75).round %>lbx5 </td>
+                  <td><%= (0.9*user.Bench*0.85).round %>lbx3 </td>
+                  <td><%= (0.9*user.Bench*0.95).round %>lbx1 </td>
+                </tr>
+                <tr>
+                  <td>Dead</td>
+                  <td><%= (0.9*user.Dead*0.75).round %>lbx5 </td>
+                  <td><%= (0.9*user.Dead*0.85).round %>lbx3 </td>
+                  <td><%= (0.9*user.Dead*0.95).round %>lbx1 </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Week Four(deload)</a>
+          </h4>
+        </div>
+        <div id="collapseFour" class="panel-collapse collapse">
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Lift</th>
+                  <th>First Set</th>
+                  <th>Second Set</th>
+                  <th>Third Set</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Squat</td>
+                  <td><%= (0.9*user.Squat*0.40).round %>lbx5 </td>
+                  <td><%= (0.9*user.Squat*0.40).round %>lbx5 </td>
+                  <td><%= (0.9*user.Squat*0.40).round %>lbx5 </td>
+                </tr>
+                <tr>
+                  <td>Bench</td>
+                  <td><%= (0.9*user.Bench*0.50).round %>lbx5 </td>
+                  <td><%= (0.9*user.Bench*0.50).round %>lbx5 </td>
+                  <td><%= (0.9*user.Bench*0.50).round %>lbx5 </td>
+                </tr>
+                <tr>
+                  <td>Dead</td>
+                  <td><%= (0.9*user.Dead*0.60).round %>lbx5 </td>
+                  <td><%= (0.9*user.Dead*0.60).round %>lbx5 </td>
+                  <td><%= (0.9*user.Dead*0.60).round %>lbx5 </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% elsif user.program == "Smolov Jr Bench" %>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Week One</a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Day 1 - 6 x 6</th>
+                  <th>Day 2 - 7 x 5</th>
+                  <th>Day 3 - 8 x 4</th>
+                  <th>Day 4 - 10 x 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= (user.Bench*0.70).round %>lb 6x6 </td>
+                  <td><%= (user.Bench*0.75).round %>lb 7x5</td>
+                  <td><%= (user.Bench*0.80).round %>lb 8x4</td>
+                  <td><%= (user.Bench*0.85).round %>lb 10x3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Week Two</a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Day 1 - 6 x 6</th>
+                  <th>Day 2 - 7 x 5</th>
+                  <th>Day 3 - 8 x 4</th>
+                  <th>Day 4 - 10 x 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= (5+user.Bench*0.70).round %>lb 6x6 </td>
+                  <td><%= (5+user.Bench*0.75).round %>lb 7x5</td>
+                  <td><%= (5+user.Bench*0.80).round %>lb 8x4</td>
+                  <td><%= (5+user.Bench*0.85).round %>lb 10x3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Week Three</a>
+          </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse">
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Day 1 - 6 x 6</th>
+                  <th>Day 2 - 7 x 5</th>
+                  <th>Day 3 - 8 x 4</th>
+                  <th>Day 4 - 10 x 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= (10+user.Bench*0.70).round %>lb 6x6 </td>
+                  <td><%= (10+user.Bench*0.75).round %>lb 7x5</td>
+                  <td><%= (10+user.Bench*0.80).round %>lb 8x4</td>
+                  <td><%= (10+user.Bench*0.85).round %>lb 10x3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% elsif user.program == "Smolov Jr Dead" %>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Week One</a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Day 1 - 6 x 6</th>
+                  <th>Day 2 - 7 x 5</th>
+                  <th>Day 3 - 8 x 4</th>
+                  <th>Day 4 - 10 x 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= (user.Dead*0.70).round %>lb 6x6 </td>
+                  <td><%= (user.Dead*0.75).round %>lb 7x5</td>
+                  <td><%= (user.Dead*0.80).round %>lb 8x4</td>
+                  <td><%= (user.Dead*0.85).round %>lb 10x3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Week Two</a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Day 1 - 6 x 6</th>
+                  <th>Day 2 - 7 x 5</th>
+                  <th>Day 3 - 8 x 4</th>
+                  <th>Day 4 - 10 x 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= (5+user.Dead*0.70).round %>lb 6x6 </td>
+                  <td><%= (5+user.Dead*0.75).round %>lb 7x5</td>
+                  <td><%= (5+user.Dead*0.80).round %>lb 8x4</td>
+                  <td><%= (5+user.Dead*0.85).round %>lb 10x3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Week Three</a>
+          </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse">
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Day 1 - 6 x 6</th>
+                  <th>Day 2 - 7 x 5</th>
+                  <th>Day 3 - 8 x 4</th>
+                  <th>Day 4 - 10 x 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= (10+user.Dead*0.70).round %>lb 6x6 </td>
+                  <td><%= (10+user.Dead*0.75).round %>lb 7x5</td>
+                  <td><%= (10+user.Dead*0.80).round %>lb 8x4</td>
+                  <td><%= (10+user.Dead*0.85).round %>lb 10x3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% elsif user.program == "Smolov Jr Squat" %>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Week One</a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Day 1 - 6 x 6</th>
+                  <th>Day 2 - 7 x 5</th>
+                  <th>Day 3 - 8 x 4</th>
+                  <th>Day 4 - 10 x 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= (user.Squat*0.70).round %>lb 6x6 </td>
+                  <td><%= (user.Squat*0.75).round %>lb 7x5</td>
+                  <td><%= (user.Squat*0.80).round %>lb 8x4</td>
+                  <td><%= (user.Squat*0.85).round %>lb 10x3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Week Two</a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Day 1 - 6 x 6</th>
+                  <th>Day 2 - 7 x 5</th>
+                  <th>Day 3 - 8 x 4</th>
+                  <th>Day 4 - 10 x 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= (5+user.Squat*0.70).round %>lb 6x6 </td>
+                  <td><%= (5+user.Squat*0.75).round %>lb 7x5</td>
+                  <td><%= (5+user.Squat*0.80).round %>lb 8x4</td>
+                  <td><%= (5+user.Squat*0.85).round %>lb 10x3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Week Three</a>
+          </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse">
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Day 1 - 6 x 6</th>
+                  <th>Day 2 - 7 x 5</th>
+                  <th>Day 3 - 8 x 4</th>
+                  <th>Day 4 - 10 x 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= (10+user.Squat*0.70).round %>lb 6x6 </td>
+                  <td><%= (10+user.Squat*0.75).round %>lb 7x5</td>
+                  <td><%= (10+user.Squat*0.80).round %>lb 8x4</td>
+                  <td><%= (10+user.Squat*0.85).round %>lb 10x3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% elsif user.program == "Starting Strength" %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Workout A</a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in">
+        <div class="panel-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Lift</th>
+                <th>First Set</th>
+                <th>Second Set</th>
+                <th>Third Set</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Squat</td>
+                <td><%= (0.9*user.Squat*0.85).round %>lbx5 </td>
+                <td><%= (0.9*user.Squat*0.85).round %>lbx5 </td>
+                <td><%= (0.9*user.Squat*0.85).round %>lbx5 </td>
+              </tr>
+              <tr>
+                <td>OHP</td>
+                <td><%= (0.9*user.OHP*0.85).round %>lbx5 </td>
+                <td><%= (0.9*user.OHP*0.85).round %>lbx5 </td>
+                <td><%= (0.9*user.OHP*0.85).round %>lbx5 </td>
+              </tr>
+              <tr>
+                <td>Dead</td>
+                <td><%= (0.9*user.Dead*0.75).round %>lbx5 </td>
+                <td>N/A</td>
+                <td>N/A</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Week B</a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse">
+        <div class="panel-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Lift</th>
+                <th>First Set</th>
+                <th>Second Set</th>
+                <th>Third Set</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Squat</td>
+                <td><%= (0.9*user.Squat*0.75).round %>lbx5 </td>
+                <td><%= (0.9*user.Squat*0.80).round %>lbx5 </td>
+                <td><%= (0.9*user.Squat*0.85).round %>lbx5 </td>
+              </tr>
+              <tr>
+                <td>Bench</td>
+                <td><%= (0.9*user.Bench*0.85).round %>lbx5 </td>
+                <td><%= (0.9*user.Bench*0.85).round %>lbx5 </td>
+                <td><%= (0.9*user.Bench*0.85).round %>lbx5 </td>
+              </tr>
+              <tr>
+                <td>Dead</td>
+                <td><%= (0.9*user.Dead*0.85).round %>lbx5 </td>
+                <td>N/A</td>
+                <td>N/A</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
+  <%end%>
+</div>
